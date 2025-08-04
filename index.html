@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h2>Customer Registration</h2>
+
+  <form id="registrationForm">
+    <!-- Personal Info -->
+    <label>Customer Name</label>
+    <input type="text" id="customerName" maxlength="50" required />
+
+    <label>Email</label>
+    <input type="email" id="email" required />
+
+    <label>Mobile Number</label>
+    <div class="mobile-row">
+      <select id="countryCode" required>
+        <option value="+91">+91 (India)</option>
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+      </select>
+      <input type="text" id="mobileNumber" maxlength="10" pattern="\d{10}" required />
+    </div>
+
+    <label>Address</label>
+    <input type="text" id="address" required />
+
+    <!-- Credentials -->
+    <label>Customer ID</label>
+    <input type="text" id="customerId" minlength="5" maxlength="20" required />
+
+    <label>Password</label>
+    <input type="password" id="password" maxlength="30" required />
+
+    <label>Confirm Password</label>
+    <input type="password" id="confirmPassword" maxlength="30" required />
+
+    <div class="form-buttons">
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+
+  <!-- Acknowledgment Screen -->
+  <div class="ack-screen" id="ackScreen">
+    <p class="success">Consumer Registration successful</p>
+    <p><strong>User ID:</strong> <span id="generatedUserId"></span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
